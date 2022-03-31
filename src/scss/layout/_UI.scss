@@ -1,0 +1,24 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.app {
+    margin-top: 5rem;
+    @include m.tablet {
+        @include m.grid(2, 2rem)
+    }
+}
+
+main {
+    @include m.tablet {
+        overflow-y: scroll;
+    }
+}
+
+.ingreso {
+    font-weight: 700;
+    color: v.$verde;
+}
+.gasto {
+    font-weight: 700;
+    color: v.$rojo;
+}

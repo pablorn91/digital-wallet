@@ -1,0 +1,20 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+table {
+    background-color: v.$blanco;
+    font-size: 2rem;
+    margin: 0 auto 4rem auto;
+    border-radius: .5rem;
+    border-collapse: collapse;
+    border: none;
+    padding: auto;
+    
+}
+thead {
+    background-color: v.$principal;
+    color: v.$blanco;
+}
+td {
+    padding: 2rem;
+}

@@ -1,0 +1,105 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.modal {
+    position: fixed;
+    background-color: rgb(0 0 0 / 0.92);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.modal .cerrar-modal {
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+    width: 3rem;
+    height: 3rem;
+    z-index: 1;
+}
+.modal .cerrar-modal img {
+    width: 100%;
+}
+
+
+.modal label {
+    color: v.$blanco;
+}
+body .modal {
+    overflow: hidden;
+}
+
+.modal .formulario.animar {
+    position: relative;
+    opacity: 1;
+}
+
+.modal .formulario.cerrar {
+    opacity: 0;
+}
+
+.modal label {
+    text-align: left;
+}
+
+
+.formulario {
+    width: 90%;
+    margin: 5rem auto;
+    padding: auto;
+
+    @include m.tablet {
+        padding: 5rem 0;
+        width: 40rem;       
+    }
+}
+.formulario legend {
+    font-size: 3.6rem;
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+    color: v.$blanco;
+    margin-bottom: 4rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid v.$principal;
+}
+.formulario .campo {
+    display: grid;
+    margin-bottom: 2rem;
+}
+
+.formulario label {
+    color: v.$principal;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin: auto;
+}
+
+.formulario input[type="number"] {
+    background-color: v.$gris;
+    border-radius: 1rem;
+    padding: 1rem .5rem;
+    border: none;
+    flex: 1;
+    font-size: 1.4rem;
+    min-width: 30rem;
+}
+
+.formulario input[type="submit"] {
+    margin-top: 3rem;
+    width: 100%;
+    min-width: 30rem;
+}
+
+
+.formulario select {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 1.4rem;
+    background-color: v.$gris;
+    min-width: 30rem;
+}
