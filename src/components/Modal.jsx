@@ -64,7 +64,7 @@ const Modal = ({setModal, alerta, setAlerta, guardarRegistro, calcularPresupuest
           <legend>Registrar</legend>
  
           <div className="campo">
-              <label htmlFor="operacion">Elija operación</label>
+              <label htmlFor="operacion">Seleccione operación</label>
                 <select 
                     id="operacion"
                     value={operacion}
@@ -83,7 +83,7 @@ const Modal = ({setModal, alerta, setAlerta, guardarRegistro, calcularPresupuest
                     type="number"
                     min="1"
                     step="any"
-                    placeholder="Añade Monto"
+                    placeholder="Añade Cantidad"
                     value={cantidad}
                     onChange={e => setCantidad(e.target.value)}
               />
