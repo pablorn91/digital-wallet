@@ -8,12 +8,6 @@
     }
 }
 
-main {
-    @include m.tablet {
-        overflow-y: scroll;
-    }
-}
-
 .ingreso {
     font-weight: 700;
     color: v.$verde;

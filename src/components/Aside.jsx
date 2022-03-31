@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Alerta from "./Alerta"
 
-const Aside = ({setModal, alerta, registros, calcularPresupuesto}) => {
+const Aside = ({setModal, alerta, registros, calcularPresupuesto, formatearCantidad}) => {
 
     const [ presupuesto, setPresupuesto ] = useState('')
 
@@ -10,7 +10,7 @@ const Aside = ({setModal, alerta, registros, calcularPresupuesto}) => {
     }
 
     useEffect(() => {
-        setPresupuesto(calcularPresupuesto())
+        setPresupuesto(calcularPresupuesto().toFixed(2))
     }, [registros])
 
   return (
@@ -26,7 +26,7 @@ const Aside = ({setModal, alerta, registros, calcularPresupuesto}) => {
             >Registrar</button>
             
             <h3>Tu saldo:</h3>
-            <p className={ presupuesto <=10 ? 'saldo enrojo' : 'saldo estable'}>{`$${presupuesto}`}</p>
+            <p className={ presupuesto <=10 ? 'saldo enrojo' : 'saldo estable'}>{`${formatearCantidad(Number(presupuesto))}`}</p>
 
         </aside>
 

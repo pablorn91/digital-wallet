@@ -82,6 +82,7 @@ const Modal = ({setModal, alerta, setAlerta, guardarRegistro, calcularPresupuest
                     id="cantidad"
                     type="number"
                     min="1"
+                    step="any"
                     placeholder="Añade Monto"
                     value={cantidad}
                     onChange={e => setCantidad(e.target.value)}

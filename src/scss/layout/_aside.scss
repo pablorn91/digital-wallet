@@ -1,13 +1,5 @@
 @use '../base/variables' as v;
 
-aside {
-    background-color: v.$blanco;
-    padding: 3rem 8rem;
-    margin: auto;
-    border-radius: .5rem;
-    box-shadow: 0 2px 9px #c4c4c4;
-}
-
 .saldo {
     text-align: center;
     font-size: 4rem;
