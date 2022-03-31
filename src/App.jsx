@@ -17,9 +17,9 @@ function App() {
       registro.id = generarId();
       registro.fecha = Date.now();
       if(registro.operacion === 'ingreso') {
-        registro.saldo = calcularPresupuesto()+Number(registro.cantidad)
+        registro.saldo = (calcularPresupuesto()+Number(registro.cantidad)).toFixed(2)
       } else {
-        registro.saldo = calcularPresupuesto()-Number(registro.cantidad)
+        registro.saldo = (calcularPresupuesto()-Number(registro.cantidad)).toFixed(2)
       }
       setRegistros([...registros, registro])
       setAlerta({
@@ -40,6 +40,14 @@ function App() {
     return resultado;
   }
 
+  const formatearCantidad = (cantidad) => {
+    cantidad = Number(cantidad)
+   return cantidad.toLocaleString('en-US', {
+       style: 'currency',
+       currency: 'USD'
+   })
+  }
+
   useEffect( ()=> {
     localStorage.setItem('registros', JSON.stringify(registros) ?? [] )
   }, [registros])
@@ -55,11 +63,15 @@ function App() {
           alerta={alerta}
           registros={registros}
           calcularPresupuesto={calcularPresupuesto}
+          formatearCantidad={formatearCantidad}
         />
 
         { registros.length === 0 ?  
           <h2>Aquí se mostrarán tus Registros</h2> : 
-          <Principal registros={registros} />
+          <Principal 
+            registros={registros} 
+            formatearCantidad={formatearCantidad}
+          />
         }
 
         {modal && (
